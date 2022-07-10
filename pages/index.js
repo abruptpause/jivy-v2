@@ -10,7 +10,7 @@ const Square = ({ img, start }) => (
   <div
     className={`
     relative grid justify-center w-full items-center
-    aspect-square bg-white my-8 scroll-element col-span-7 ${start}
+     aspect-[1/1] bg-white my-8 scroll-element col-span-7 ${start}
   `}
   >
     {img && <Image layout='fill' alt='' src={img} />}
@@ -134,7 +134,7 @@ const Home = ({ page }) => {
         <TopSection />
 
         <Section span={span}>
-          <div className='relative col-span-8 aspect-5/7 self-start'>
+          <div className='relative col-span-8 aspect-[5/7] self-start'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
           <div className='relative col-span-4 self-end'>
@@ -143,13 +143,13 @@ const Home = ({ page }) => {
           <div className='relative col-span-8 self-end text-right'>
             <Description />
           </div>
-          <div className='relative col-span-4 aspect-4/5 self-end mb-24'>
+          <div className='relative col-span-4 aspect-[4/5] self-end mb-24'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
         </Section>
 
         <Section bg='bg-slate-200' span={span}>
-          <div className='relative col-span-6 aspect-2/3 self-start'>
+          <div className='relative col-span-6 aspect-[2/3] self-start'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
           <div className='col-span-6 self-end'>
@@ -171,7 +171,7 @@ const Home = ({ page }) => {
         </Section>
 
         <Section bg='bg-slate-400' span={span}>
-          <div className='relative col-span-8 col-start-3 aspect-7/5 bg-slate-500 self-center'>
+          <div className='relative col-span-8 col-start-3 aspect-[7/5] bg-slate-500 self-center'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
           <div className='col-span-8 col-start-3 text-center'>
@@ -188,7 +188,7 @@ const Home = ({ page }) => {
         </Section>
 
         <Section span={span}>
-          <div className='relative col-span-6 aspect-4/5 self-start'>
+          <div className='relative col-span-6 aspect-[4/5] self-start'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
           <div className='relative col-span-5 self-end'>
@@ -198,7 +198,7 @@ const Home = ({ page }) => {
           <div className='relative col-span-6 self-end text-right'>
             <Description />
           </div>
-          <div className='relative col-span-5 aspect-square self-end'>
+          <div className='relative col-span-5 aspect-[1/1] self-end'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/c0fc1126-1ccb-4536-8a43-ee2e5fb52b58_JIV5.jpg' layout='fill' />
           </div>
         </Section>

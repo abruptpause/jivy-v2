@@ -1,10 +1,16 @@
 module.exports = {
   content: ["./pages/**/*.js", "./components/**/*.js", "./slices/**/*.js"],
   theme: {
-    fontFamily: {
-      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-    },
-    extend: {},
+    extend: {
+      // https://tailwindcss.com/docs/aspect-ratio#using-custom-values
+      aspectRatio: {
+        '2/3': '2 / 3',
+        '4/5': '4 / 5',
+        '5/7': '5 / 7',
+        '4/3': '4 / 3',
+        '7/5': '7 / 5'
+      }
+    }
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };

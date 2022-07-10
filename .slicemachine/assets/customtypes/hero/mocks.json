@@ -1,0 +1,37 @@
+{
+  "id": "a98f398f-2b1a-4705-a24e-12b967e30c8d",
+  "uid": "quia-vel-nesciunt",
+  "type": "hero",
+  "data": {
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
+    },
+    "title": [
+      {
+        "type": "paragraph",
+        "text": "Deserunt enim cillum officia sit officia laboris anim irure aliquip nostrud. Consectetur nulla velit culpa aliqua labore eiusmod non ex velit id elit amet velit amet occaecat. Quis officia culpa magna labore sunt consectetur est ad proident laboris do enim et occaecat.",
+        "spans": []
+      }
+    ],
+    "subtitle": [
+      {
+        "type": "paragraph",
+        "text": "Voluptate elit sunt aute eiusmod reprehenderit mollit sint culpa nulla.",
+        "spans": []
+      }
+    ],
+    "about": [
+      {
+        "type": "paragraph",
+        "text": "Excepteur dolor eiusmod nostrud.",
+        "spans": []
+      }
+    ]
+  }
+}

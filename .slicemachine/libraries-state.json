@@ -1,6 +1,135 @@
 {
   "slices": {
     "components": {
+      "artworks": {
+        "library": "slices",
+        "id": "artworks",
+        "name": "Artworks",
+        "description": "Artworks",
+        "model": {
+          "id": "artworks",
+          "type": "SharedSlice",
+          "name": "Artworks",
+          "description": "Artworks",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Artworks",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "name": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": "Name"
+                  }
+                },
+                "medium": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Medium",
+                    "placeholder": "Medium"
+                  }
+                },
+                "size": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Size",
+                    "placeholder": "Size"
+                  }
+                },
+                "position": {
+                  "type": "Number",
+                  "config": {
+                    "label": "Position",
+                    "placeholder": "",
+                    "min": 1,
+                    "max": 6
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "artworks",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=900&h=500&fit=crop"
+                },
+                "name": "syndicate distributed markets",
+                "medium": "target value-added e-markets",
+                "size": "unleash next-generation bandwidth",
+                "position": 9629
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+                },
+                "name": "embrace viral networks",
+                "medium": "brand global markets",
+                "size": "recontextualize synergistic content",
+                "position": 9076
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+                },
+                "name": "visualize synergistic e-business",
+                "medium": "embrace synergistic initiatives",
+                "size": "optimize cutting-edge vortals",
+                "position": 3012
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/admin/work/apause/websites/red-co/next-multi-page/.slicemachine/assets/slices/Artworks/default/preview.png",
+            "width": 800,
+            "height": 48
+          }
+        }
+      },
       "featured": {
         "library": "slices",
         "id": "featured",
@@ -28,10 +157,10 @@
                 }
               },
               "items": {
-                "artwork": {
+                "image": {
                   "type": "Image",
                   "config": {
-                    "label": "Artwork",
+                    "label": "Image",
                     "constraint": {},
                     "thumbnails": []
                   }
@@ -40,21 +169,21 @@
                   "type": "Text",
                   "config": {
                     "label": "Name",
-                    "placeholder": ""
+                    "placeholder": "Name"
                   }
                 },
                 "medium": {
                   "type": "Text",
                   "config": {
                     "label": "Medium",
-                    "placeholder": ""
+                    "placeholder": "Medium"
                   }
                 },
                 "size": {
                   "type": "Text",
                   "config": {
                     "label": "Size",
-                    "placeholder": ""
+                    "placeholder": "Size"
                   }
                 }
               },
@@ -69,64 +198,50 @@
             "slice_type": "featured",
             "items": [
               {
-                "artwork": {
+                "image": {
                   "dimensions": {
                     "width": 900,
                     "height": 500
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
                 },
-                "name": "transition bricks-and-clicks technologies",
-                "medium": "synergize frictionless mindshare",
-                "size": "e-enable dot-com systems"
+                "name": "synthesize global methodologies",
+                "medium": "strategize e-business interfaces",
+                "size": "synergize global e-markets"
               },
               {
-                "artwork": {
+                "image": {
                   "dimensions": {
                     "width": 900,
                     "height": 500
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
                 },
-                "name": "streamline distributed communities",
-                "medium": "iterate rich interfaces",
-                "size": "scale end-to-end initiatives"
+                "name": "mesh sexy models",
+                "medium": "grow world-class networks",
+                "size": "visualize global models"
               },
               {
-                "artwork": {
+                "image": {
                   "dimensions": {
                     "width": 900,
                     "height": 500
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
                 },
-                "name": "scale innovative web-readiness",
-                "medium": "facilitate dynamic applications",
-                "size": "disintermediate ubiquitous experiences"
-              },
-              {
-                "artwork": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
-                },
-                "name": "generate virtual mindshare",
-                "medium": "deploy end-to-end convergence",
-                "size": "empower magnetic platforms"
+                "name": "recontextualize granular architectures",
+                "medium": "integrate seamless platforms",
+                "size": "exploit B2C systems"
               }
             ],
             "primary": {
-              "title": "deliver out-of-the-box infomediaries"
+              "title": "repurpose distributed architectures"
             }
           }
         },

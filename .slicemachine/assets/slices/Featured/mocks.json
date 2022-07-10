@@ -5,64 +5,50 @@
     "slice_type": "featured",
     "items": [
       {
-        "artwork": {
+        "image": {
           "dimensions": {
             "width": 900,
             "height": 500
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
         },
-        "name": "transition bricks-and-clicks technologies",
-        "medium": "synergize frictionless mindshare",
-        "size": "e-enable dot-com systems"
+        "name": "synthesize global methodologies",
+        "medium": "strategize e-business interfaces",
+        "size": "synergize global e-markets"
       },
       {
-        "artwork": {
+        "image": {
           "dimensions": {
             "width": 900,
             "height": 500
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
         },
-        "name": "streamline distributed communities",
-        "medium": "iterate rich interfaces",
-        "size": "scale end-to-end initiatives"
+        "name": "mesh sexy models",
+        "medium": "grow world-class networks",
+        "size": "visualize global models"
       },
       {
-        "artwork": {
+        "image": {
           "dimensions": {
             "width": 900,
             "height": 500
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
         },
-        "name": "scale innovative web-readiness",
-        "medium": "facilitate dynamic applications",
-        "size": "disintermediate ubiquitous experiences"
-      },
-      {
-        "artwork": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
-        },
-        "name": "generate virtual mindshare",
-        "medium": "deploy end-to-end convergence",
-        "size": "empower magnetic platforms"
+        "name": "recontextualize granular architectures",
+        "medium": "integrate seamless platforms",
+        "size": "exploit B2C systems"
       }
     ],
     "primary": {
-      "title": "deliver out-of-the-box infomediaries"
+      "title": "repurpose distributed architectures"
     }
   }
 ]

@@ -13,6 +13,8 @@ const Square = ({ img, alt, start }) => (
 )
 
 // TODO: start 2, 5, 2, 5, alternating.
+// might just use the API and avoid all of this for now...
+
 const Featured = ({ slice }) => (
   <div className='absolute top-0 left-0 grid grid-cols-3 w-full h-full z-10'>
   <div
@@ -29,7 +31,7 @@ const Featured = ({ slice }) => (
       {slice.primary.title}
     </h1>
     {slice?.items?.map((item, i) => (
-      <Square img={item.artwork.url} alt={item.artwork.alt} start='col-start-5' key={i} />
+      <Square img={item.image.url} alt={item.image.alt} start='col-start-5' key={i} />
     ))}
   </div>
   </div>

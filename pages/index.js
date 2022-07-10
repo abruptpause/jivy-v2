@@ -5,7 +5,6 @@ import Image from 'next/image'
 // const Index = ({ page }) => (<Fofofo />)
 // export default Index
 
-
 const Square = ({ img, start }) => (
   <div
     className={`
@@ -17,7 +16,7 @@ const Square = ({ img, start }) => (
   </div>
 )
 
-const Featured = () => (
+const Featured = ({page}) => (
   <div
     className={`
     sticky overflow-y-scroll col-span-1 col-start-3 h-screen top-0
@@ -40,7 +39,10 @@ const Featured = () => (
   </div>
 )
 
-const Header = ({ text = ['title', 'text'], subtext = 'subtext' }) => {
+const Header = ({page}) => {
+  const text = page.data.title.map(i => i.text)
+  const subtext = page.data.subtitle[0].text
+
   return (
     <div
       className={`
@@ -64,7 +66,7 @@ const Section = ({ children, bg = 'bg-slate-100', span }) => (
   </div>
 )
 
-const TopSection = () => (
+const TopSection = ({page}) => (
   <div className='relative grid grid-cols-3'>
     <div
       className='absolute top-0 left-0 grid grid-cols-3 w-full z-10'
@@ -73,32 +75,26 @@ const TopSection = () => (
       }}
     >
       <Header
-        text={['featuring', 'art', 'by', 'john ivy']}
-        subtext='abrupt pause'
+        page={page}
       />
     </div>
 
     <div className='absolute top-0 left-0 grid grid-cols-3 w-full h-full z-10'>
-      <Featured />
+      <Featured page={page} />
     </div>
 
     <div
       className='col-span-2 relative h-screen bg-center bg-cover bg-white text-slate-200'
-      style={{ backgroundImage: `url('https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format')` }}
+      style={{ backgroundImage: `url('` + page.data.image.url + `')` }}
     ></div>
 
     <div className='col-span-2 relative flex h-screen bg-slate-200 items-end justify-center'></div>
 
     <div className='col-span-2 relative bg-slate-200 text-justify grid grid-cols-5'>
       <div className='pb-24 col-span-3 col-start-2'>
-        {[
-          `For me, I rarely approach a work with a preconception of how it should look. It's much too frustrating, and I'm just not that good.`,
-          `My best laid plans are never realized, and often what I end up with has little or nothing to do with my initial premise.`,
-          `Even when a piece is finished (which only means I've stopped working on it), What has been of interest to me has more to do with the process or evolution than the product.`,
-          `It's not a very efficient way to work, I suppose.`
-        ].map((val, key) => (
-          <p key={key} className='font-extralight mb-4 text-slate-500 text-xl'>
-            {val}
+        {page.data.about.map((i, k) => (
+          <p key={k} className='font-extralight mb-4 text-slate-500 text-xl'>
+            {i.text}
           </p>
         ))}
       </div>
@@ -126,12 +122,21 @@ const Home = ({ page }) => {
   // const [span, setSpan] = useState('col-span-10 col-start-2')
   const span = 'col-span-10 col-start-2'
 
+  console.log(page.data)
+  const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
+  const artworks = page.data.slices.filter(slice => slice.slice_type === 'artworks')[0]
+  // console.log(featured, artworks)
+  // console.log(featured)
+  // page.data.title.join('\n')
+  // or map it idk.
+  // slice_type: featured, artworks
+
   // sidebar open
   // const [span, setSpan] = useState('col-span-8 col-start-1')
 
   return (
       <main>
-        <TopSection />
+        <TopSection page={page} />
 
         <Section span={span}>
           <div className='relative col-span-8 aspect-[5/7] self-start'>

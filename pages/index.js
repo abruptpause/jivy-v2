@@ -36,9 +36,7 @@ return (
 )}
 
 const Header = ({page}) => {
-  const text = page.data.title.map(i => i.text)
-  const subtext = page.data.subtitle[0].text
-
+  const subtitle = page.data.subtitle[0].text
   return (
     <div
       className={`
@@ -47,10 +45,8 @@ const Header = ({page}) => {
     `}
     >
       <div>
-        <h1 className='text-xl pb-12'>{subtext}</h1>
-        {Array.isArray(text) &&
-          text.length &&
-          text.map((val, ind) => <h1 key={ind}>{val}</h1>)}
+        <h1 className='text-xl pb-12'>{subtitle}</h1>
+        {page.data.title.map((i, k) => <h1 key={k}>{i.text}</h1>)}
       </div>
     </div>
   )
@@ -99,17 +95,19 @@ const TopSection = ({page}) => (
   </div>
 )
 
-const Description = () => (
+const Description = ({item}) => {
+return (
   <>
     <h1 className='freight-neo font-normal text-3xl text-slate-400 mb-4'>
-      {'Pterodactyl-543'}
+      {item.name}
     </h1>
-    <h2 className='freight-neo text-slate-500'>Medium: Paper and ...</h2>
+    <h2 className='freight-neo text-slate-500'>{item.medium}</h2>
     <h2 className='freight-neo text-slate-500 mb-12'>
-      Size: 1234 x 4567 inches
+      {item.size}
     </h2>
   </>
 )
+}
 
 // /*
 const Home = ({ page }) => {
@@ -119,14 +117,14 @@ const Home = ({ page }) => {
   const span = 'col-span-10 col-start-2'
 
   const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
-  const artworks = page.data.slices.filter(slice => slice.slice_type === 'artworks')[0]
 
-  // console.log(page.data)
-  // console.log(featured, artworks)
-  // console.log(featured.items)
-  // page.data.title.join('\n')
-  // or map it idk.
-  // slice_type: featured, artworks
+  const artworksData = page.data.slices.filter(slice => slice.slice_type === 'artworks')[0]
+  const artworks = artworksData.items.sort((a, b) => a.position - b.position).map(i => { return { ...i, image: i.image.url } })
+  // const shorter = artworks.map(i => { return { ...i, image: i.image.url } })
+  console.log(artworks)
+  // image.url, medium, name, position, size
+
+
 
   // sidebar open
   // const [span, setSpan] = useState('col-span-8 col-start-1')
@@ -135,69 +133,59 @@ const Home = ({ page }) => {
       <main>
         <TopSection page={page} />
 
-
-
         <Section span={span}>
           <div className='relative col-span-8 aspect-[5/7] self-start'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
+            <Image alt='' src={artworks[0].image} layout='fill' />
           </div>
           <div className='relative col-span-4 self-end'>
-            <Description />
+            <Description item={artworks[0]} />
           </div>
           <div className='relative col-span-8 self-end text-right'>
-            <Description />
+            <Description item={artworks[1]} />
           </div>
           <div className='relative col-span-4 aspect-[4/5] self-end mb-24'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
+            <Image alt='' src={artworks[1].image} layout='fill' />
           </div>
         </Section>
-
-
-
 
         <Section bg='bg-slate-200' span={span}>
           <div className='relative col-span-6 aspect-[2/3] self-start'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
+            <Image alt='' src={artworks[2].image} layout='fill' />
           </div>
           <div className='col-span-6 self-end'>
-            <Description />
+            <Description item={artworks[2]} />
           </div>
         </Section>
-
-
-
 
         <Section bg='bg-slate-400' span={span}>
           <div className='relative col-span-8 col-start-3 aspect-[7/5] bg-slate-500 self-center'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
+            <Image alt='' src={artworks[3].image} layout='fill' />
           </div>
           <div className='col-span-8 col-start-3 text-center'>
             <h1 className='freight-neo font-normal text-3xl text-slate-600 mb-4'>
-              {'Pterodactyl-543'}
+              {artworks[3].name}
             </h1>
             <h2 className='freight-neo text-slate-700'>
-              Medium: Paper and ...
+              {artworks[3].medium}
             </h2>
             <h2 className='freight-neo text-slate-700 mb-12'>
-              Size: 1234 x 4567 inches
+              {artworks[3].size}
             </h2>
           </div>
         </Section>
 
-
-
         <Section span={span}>
           <div className='relative col-span-6 aspect-[4/5] self-start'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
+            <Image alt='' src={artworks[4].image} layout='fill' />
           </div>
           <div className='relative col-span-5 self-end'>
-            <Description />
+            <Description item={artworks[4]} />
           </div>
           <div className='relative col-span-6 self-end text-right'>
-            <Description />
+            <Description item={artworks[5]} />
           </div>
           <div className='relative col-span-5 aspect-[1/1] self-end'>
-            <Image alt='' src='https://images.prismic.io/next-multi-page/c0fc1126-1ccb-4536-8a43-ee2e5fb52b58_JIV5.jpg' layout='fill' />
+            <Image alt='' src={artworks[5].image} layout='fill' />
           </div>
         </Section>
 

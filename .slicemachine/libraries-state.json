@@ -1,5 +1,83 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "temp": {
+        "library": "slices",
+        "id": "temp",
+        "name": "Temp",
+        "description": "Temp",
+        "model": {
+          "id": "temp",
+          "type": "SharedSlice",
+          "name": "Temp",
+          "description": "Temp",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Temp",
+              "primary": {
+                "First": {
+                  "type": "Text",
+                  "config": {
+                    "label": "First",
+                    "placeholder": ""
+                  }
+                },
+                "Second": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Second",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "RepeatableText": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Repeatable Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "temp",
+            "items": [
+              {
+                "RepeatableText": "e-enable turn-key methodologies"
+              },
+              {
+                "RepeatableText": "repurpose extensible methodologies"
+              }
+            ],
+            "primary": {
+              "First": "exploit dot-com solutions",
+              "Second": "expedite sticky technologies"
+            }
+          }
+        },
+        "meta": {
+          "fileName": null,
+          "extension": null
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/admin/work/apause/websites/red-co/next-multi-page/.slicemachine/assets/slices/Temp/default/preview.png",
+            "width": 800,
+            "height": 96
+          }
+        }
+      }
+    }
   }
 }

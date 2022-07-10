@@ -11,6 +11,9 @@ const Index = ({ page }) => (
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
+      <pre>
+      {JSON.stringify(page, 0, 2)}
+      </pre>
       <SliceZone slices={page.data.slices} components={components} />
     </>
   )

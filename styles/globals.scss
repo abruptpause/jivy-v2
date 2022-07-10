@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'FreightNeo';
+  src: url('../assets/fonts/FreightNeoPro-Medium.woff2');
+}
+
+@font-face {
+  font-family: 'FreightNeo';
+  src: url('../assets/fonts/FreightNeoPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FreightNeo';
+  src: url('../assets/fonts/FreightNeoPro-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FreightNeo';
+  src: url('../assets/fonts/FreightNeoPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.freight-neo {
+  font-family: 'FreightNeo';
+  text-transform: uppercase;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-element {
+  scroll-snap-align: start;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.text-super-xl {
+  font-size: 10rem;
+  line-height: 1;
+}

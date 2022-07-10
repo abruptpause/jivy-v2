@@ -2,9 +2,6 @@ import { createClient } from "../prismicio"
 
 import Image from 'next/image'
 
-// const Index = ({ page }) => (<Fofofo />)
-// export default Index
-
 const Square = ({ img, start }) => (
   <div
     className={`
@@ -16,7 +13,11 @@ const Square = ({ img, start }) => (
   </div>
 )
 
-const Featured = ({page}) => (
+const Featured = ({page}) => {
+
+const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
+
+return (
   <div
     className={`
     sticky overflow-y-scroll col-span-1 col-start-3 h-screen top-0
@@ -28,16 +29,11 @@ const Featured = ({page}) => (
       col-span-12 text-white freight-neo text-center top-0 left-0 text-3xl pt-6 mb-8 sticky
     `}
     >
-      featured work
+      {featured.primary.title}
     </h1>
-
-    <Square img='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' start='col-start-5' />
-    <Square img='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' start='col-start-2' />
-    <Square img='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' start='col-start-5' />
-    <Square img='' start='col-start-2' />
-    <Square img='' start='col-start-5' />
+    {featured.items.map((i, k) => <Square key={k} img={i.image.url} start={k % 2 === 0 ? 'col-start-2' : 'col-start-5'} />)}
   </div>
-)
+)}
 
 const Header = ({page}) => {
   const text = page.data.title.map(i => i.text)
@@ -122,11 +118,12 @@ const Home = ({ page }) => {
   // const [span, setSpan] = useState('col-span-10 col-start-2')
   const span = 'col-span-10 col-start-2'
 
-  console.log(page.data)
   const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
   const artworks = page.data.slices.filter(slice => slice.slice_type === 'artworks')[0]
+
+  // console.log(page.data)
   // console.log(featured, artworks)
-  // console.log(featured)
+  // console.log(featured.items)
   // page.data.title.join('\n')
   // or map it idk.
   // slice_type: featured, artworks
@@ -137,6 +134,8 @@ const Home = ({ page }) => {
   return (
       <main>
         <TopSection page={page} />
+
+
 
         <Section span={span}>
           <div className='relative col-span-8 aspect-[5/7] self-start'>
@@ -153,27 +152,20 @@ const Home = ({ page }) => {
           </div>
         </Section>
 
+
+
+
         <Section bg='bg-slate-200' span={span}>
           <div className='relative col-span-6 aspect-[2/3] self-start'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
           </div>
           <div className='col-span-6 self-end'>
             <Description />
-            {[
-              `So, in not thinking too much about what I'm trying to do, and just doing it.`,
-              `For me, I rarely approach a work with a preconception of how it should look. It's much too frustrating, and I'm just not that good.`,
-              `My best laid plans are never realized, and often what I end up with has little or nothing to do with my initial premise.`,
-              `It's not a very efficient way to work, I suppose.`
-            ].map((val, key) => (
-              <p
-                key={key}
-                className='mb-4 text-slate-500 text-xl font-extralight'
-              >
-                {val}
-              </p>
-            ))}
           </div>
         </Section>
+
+
+
 
         <Section bg='bg-slate-400' span={span}>
           <div className='relative col-span-8 col-start-3 aspect-[7/5] bg-slate-500 self-center'>
@@ -192,6 +184,8 @@ const Home = ({ page }) => {
           </div>
         </Section>
 
+
+
         <Section span={span}>
           <div className='relative col-span-6 aspect-[4/5] self-start'>
             <Image alt='' src='https://images.prismic.io/next-multi-page/468614fb-a0bd-4a87-8af2-23cd682ebb57_JIV4.jpg?auto=compress,format' layout='fill' />
@@ -199,7 +193,6 @@ const Home = ({ page }) => {
           <div className='relative col-span-5 self-end'>
             <Description />
           </div>
-
           <div className='relative col-span-6 self-end text-right'>
             <Description />
           </div>
@@ -207,6 +200,9 @@ const Home = ({ page }) => {
             <Image alt='' src='https://images.prismic.io/next-multi-page/c0fc1126-1ccb-4536-8a43-ee2e5fb52b58_JIV5.jpg' layout='fill' />
           </div>
         </Section>
+
+
+
       </main>
   )
 }

@@ -1,0 +1,56 @@
+{
+  "id": "featured",
+  "type": "SharedSlice",
+  "name": "Featured",
+  "description": "Featured",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Featured",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Featured Work"
+          }
+        }
+      },
+      "items": {
+        "artwork": {
+          "type": "Image",
+          "config": {
+            "label": "Artwork",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "medium": {
+          "type": "Text",
+          "config": {
+            "label": "Medium",
+            "placeholder": ""
+          }
+        },
+        "size": {
+          "type": "Text",
+          "config": {
+            "label": "Size",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

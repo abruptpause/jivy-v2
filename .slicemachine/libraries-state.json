@@ -1,44 +1,59 @@
 {
   "slices": {
     "components": {
-      "temp": {
+      "featured": {
         "library": "slices",
-        "id": "temp",
-        "name": "Temp",
-        "description": "Temp",
+        "id": "featured",
+        "name": "Featured",
+        "description": "Featured",
         "model": {
-          "id": "temp",
+          "id": "featured",
           "type": "SharedSlice",
-          "name": "Temp",
-          "description": "Temp",
+          "name": "Featured",
+          "description": "Featured",
           "variations": [
             {
               "id": "default",
               "name": "Default",
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
-              "description": "Temp",
+              "description": "Featured",
               "primary": {
-                "First": {
+                "title": {
                   "type": "Text",
                   "config": {
-                    "label": "First",
-                    "placeholder": ""
-                  }
-                },
-                "Second": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Second",
-                    "placeholder": ""
+                    "label": "Title",
+                    "placeholder": "Featured Work"
                   }
                 }
               },
               "items": {
-                "RepeatableText": {
+                "artwork": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Artwork",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "name": {
                   "type": "Text",
                   "config": {
-                    "label": "Repeatable Text",
+                    "label": "Name",
+                    "placeholder": ""
+                  }
+                },
+                "medium": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Medium",
+                    "placeholder": ""
+                  }
+                },
+                "size": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Size",
                     "placeholder": ""
                   }
                 }
@@ -51,32 +66,75 @@
           "default": {
             "variation": "default",
             "name": "Default",
-            "slice_type": "temp",
+            "slice_type": "featured",
             "items": [
               {
-                "RepeatableText": "e-enable turn-key methodologies"
+                "artwork": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+                },
+                "name": "transition bricks-and-clicks technologies",
+                "medium": "synergize frictionless mindshare",
+                "size": "e-enable dot-com systems"
               },
               {
-                "RepeatableText": "repurpose extensible methodologies"
+                "artwork": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+                },
+                "name": "streamline distributed communities",
+                "medium": "iterate rich interfaces",
+                "size": "scale end-to-end initiatives"
+              },
+              {
+                "artwork": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+                },
+                "name": "scale innovative web-readiness",
+                "medium": "facilitate dynamic applications",
+                "size": "disintermediate ubiquitous experiences"
+              },
+              {
+                "artwork": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+                },
+                "name": "generate virtual mindshare",
+                "medium": "deploy end-to-end convergence",
+                "size": "empower magnetic platforms"
               }
             ],
             "primary": {
-              "First": "exploit dot-com solutions",
-              "Second": "expedite sticky technologies"
+              "title": "deliver out-of-the-box infomediaries"
             }
           }
         },
         "meta": {
-          "fileName": null,
-          "extension": null
+          "fileName": "index",
+          "extension": "js"
         },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/admin/work/apause/websites/red-co/next-multi-page/.slicemachine/assets/slices/Temp/default/preview.png",
-            "width": 800,
-            "height": 96
-          }
-        }
+        "screenshotPaths": {}
       }
     }
   }

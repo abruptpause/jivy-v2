@@ -86,6 +86,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "Featured": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {

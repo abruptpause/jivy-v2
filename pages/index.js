@@ -197,7 +197,7 @@ const Home = ({ page }) => {
 
 export default Home
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getServerSideProps({ locale, previewData }) {
   const client = createClient({ previewData })
 
   const page = await client.getByUID("home", "home", { lang: locale })

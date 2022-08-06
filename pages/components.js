@@ -69,5 +69,3 @@ export const Header = ({page}) => (
     </div>
   </div>
 )
-
-export default Header

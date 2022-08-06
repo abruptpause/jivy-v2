@@ -2,12 +2,12 @@ import Image from 'next/image'
 
 export const Section = ({ children, bg = 'bg-slate-100', width }) => (
   <div className={`min-h-screen grid grid-cols-12 ${bg}`}>
-    <div className={`${width} grid grid-cols-12 gap-14 m-14`}>{children}</div>
+    <div className={`${width} grid grid-cols-12 gap-y-14 m-14`}>{children}</div>
   </div>
 )
 
 export const Text = ({ item, className, primary = 'text-slate-400', secondary = 'text-slate-500' }) => (
-  <div className={`relative ${className}`}>
+  <div className={`relative ${className} mx-7`}>
     <h1 className={`freight-neo font-normal text-3xl mb-4 ${primary}`}>
       {item.name}
     </h1>
@@ -19,7 +19,7 @@ export const Text = ({ item, className, primary = 'text-slate-400', secondary = 
 )
 
 export const Work = ({ src, className }) => (
-  <div className={`relative ${className}`}>
+  <div className={`relative ${className} mx-7`}>
     <Image src={src} alt='' layout='fill' />
   </div>
 )

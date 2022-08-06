@@ -1,3 +1,4 @@
+// https://jivy-v2.vercel.app/
 import { useState } from 'react'
 import { createClient } from "../prismicio"
 import { Featured, Header, Section, Text, Work } from '../components/components.js'
@@ -6,9 +7,9 @@ const Home = ({ page }) => {
   const { about, image, slices } = page.data
 
   const art = slices
-    .filter(slice => slice.slice_type === 'artworks')[0].items
-    .sort((a, b) => a.position - b.position)
-    .map(i => { return { ...i, image: i.image.url } })
+  .filter(slice => slice.slice_type === 'artworks')[0].items
+  .sort((a, b) => a.position - b.position)
+  .map(i => { return { ...i, image: i.image.url } })
 
   const heroImage = { backgroundImage: `url('${image.url}')` }
 
@@ -22,7 +23,6 @@ const Home = ({ page }) => {
         <Featured page={page} />
 
         <div className='col-span-2 relative h-screen bg-center bg-cover text-slate-200' style={heroImage} />
-
         <div className='col-span-2 relative flex h-screen bg-slate-200 items-end justify-center' />
 
         <div className='col-span-2 relative bg-slate-200 text-justify grid grid-cols-5'>
@@ -49,7 +49,8 @@ const Home = ({ page }) => {
       </Section>
 
       <Section bg='bg-slate-400' width={width}>
-        <Work src={art[3].image} className='col-span-8 col-start-3 aspect-[7/5] bg-slate-500 self-center' />
+        {/* <Work src={art[3].image} className='col-span-8 col-start-3 aspect-[7/5] bg-slate-500 self-center' /> */}
+        <Work src={art[3].image} className='col-span-12 aspect-[7/5] bg-slate-500 self-center' />
         <Text item={art[3]} className='col-span-8 col-start-3 text-center' primary='text-slate-600' secondary='text-slate-700' />
       </Section>
 
@@ -74,5 +75,4 @@ export async function getServerSideProps({ locale, previewData }) {
   }
 }
 
-// https://jivy-v2.vercel.app/
 export default Home

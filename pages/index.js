@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createClient } from "../prismicio"
-import { Featured, Header, Section, Text, Work } from './components.js'
+import { Featured, Header, Section, Text, Work } from '../components/components.js'
 
 const Home = ({ page }) => {
   const { about, image, slices } = page.data

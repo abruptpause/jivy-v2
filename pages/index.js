@@ -38,7 +38,7 @@ const Home = ({ page }) => {
             can also use fraction widths: https://tailwindcss.com/docs/width
           */}
 
-        <div className={`relative col-span-3 z-10 bg-blue-500 ${width}`}
+        <div className={`relative col-span-3 z-10 ${width}`}
           style={{
             transition: 'width 0.65s'
           }}

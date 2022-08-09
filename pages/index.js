@@ -14,28 +14,57 @@ const Home = ({ page }) => {
   const heroImage = { backgroundImage: `url('${image.url}')` }
 
   // col-span-2 or col-span-3 when expanded
-  const [width, setWidth] = useState('col-span-2')
+  const [width, setWidth] = useState('w-2/3')
 
-  // blank or z-10 when expanded
-  const [index, setIndex] = useState('')
+  // z-1 or z-10 when expanded
+  const [index, setIndex] = useState('z-1')
 
   return (
     <main>
+      <div
+        onClick={() => {
+          index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
+          width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
+
+        }}
+        className='fixed top-0 left-0 z-20 cursor-pointer bg-red-500 text-center'
+        style={{
+          width: '150px',
+          height: '50px'
+        }}
+      >
+        <h1>Toggle</h1>
+      </div>
       <div className='relative grid grid-cols-3'>
+
         <Featured page={page} />
 
-        <div className={`${width} ${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
-        <div className={`${width} ${index} h-screen bg-slate-200`} />
-        <Hero page={page} width={width} index={index} />
+        {/*
+            TODO wrap all hero components in a percentage width (75-100%/w-screen), and change inner classes to w-full
+            can also use fraction widths: https://tailwindcss.com/docs/width
+        */}
 
-        <div className={`${width} ${index} grid grid-cols-5 col-span-2 bg-slate-200 text-justify`}>
-          <div className='col-span-3 col-start-2 mb-24'>
-            {about.map((i, k) => (
-              <p key={k} className='text-xl text-slate-500 font-extralight mb-4'>
-                {i.text}
-              </p>
-            ))}
+        <div className={`relative col-span-3 z-10 bg-blue-500 ${width}`}
+          style={{
+            transition: 'width 0.6s'
+          }}
+        >
+
+          <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
+          <div className={`${index} h-screen bg-slate-200`} />
+
+          <Hero page={page} width='col-span-3' index={index} />
+
+          <div className={`${index} grid grid-cols-5 col-span-2 bg-slate-200 text-justify`}>
+            <div className='col-span-3 col-start-2 mb-24'>
+              {about.map((i, k) => (
+                <p key={k} className='text-xl text-slate-500 font-extralight mb-4'>
+                  {i.text}
+                </p>
+              ))}
+            </div>
           </div>
+
         </div>
 
       </div>

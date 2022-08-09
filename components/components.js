@@ -62,7 +62,9 @@ export const Featured = ({page}) => {
 export const Hero = ({page, width, index}) => (
   <div
     className={`grid grid-cols-3 w-full absolute top-0 left-0 ${index}`}
-    style={{ height: '200vh' }}
+    style={{
+      height: '200vh'
+    }}
   >
     <div className={`
       ${width}

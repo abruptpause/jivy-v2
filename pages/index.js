@@ -21,20 +21,9 @@ const Home = ({ page }) => {
 
   return (
     <main>
-      <div
-        onClick={() => {
-          index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
-          width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
 
-        }}
-        className='fixed top-0 left-0 z-20 cursor-pointer bg-red-500 text-center'
-        style={{
-          width: '150px',
-          height: '50px'
-        }}
-      >
-        <h1>Toggle</h1>
-      </div>
+
+
       <div className='relative grid grid-cols-3'>
 
         <Featured page={page} />
@@ -42,13 +31,30 @@ const Home = ({ page }) => {
         {/*
             TODO wrap all hero components in a percentage width (75-100%/w-screen), and change inner classes to w-full
             can also use fraction widths: https://tailwindcss.com/docs/width
-        */}
+          */}
 
         <div className={`relative col-span-3 z-10 bg-blue-500 ${width}`}
           style={{
             transition: 'width 0.6s'
           }}
         >
+
+                <div
+                  onClick={() => {
+                    index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
+                    width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
+
+                  }}
+                  className='absolute z-20 cursor-pointer bg-red-500 text-center'
+                  style={{
+                    right: '12px',
+                    top: 'calc(100vh - 62px)',
+                    width: '50px',
+                    height: '50px'
+                  }}
+                >
+                  <h1>Toggle</h1>
+                </div>
 
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
           <div className={`${index} h-screen bg-slate-200`} />

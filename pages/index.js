@@ -19,6 +19,11 @@ const Home = ({ page }) => {
   // z-1 or z-10 when expanded
   const [index, setIndex] = useState('z-1')
 
+
+  const [transform, setTransform] = useState('initial')
+
+
+
   return (
     <main>
 
@@ -35,7 +40,7 @@ const Home = ({ page }) => {
 
         <div className={`relative col-span-3 z-10 bg-blue-500 ${width}`}
           style={{
-            transition: 'width 0.6s'
+            transition: 'width 0.65s'
           }}
         >
 
@@ -43,17 +48,19 @@ const Home = ({ page }) => {
                   onClick={() => {
                     index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
                     width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
-
+                    transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
                   }}
-                  className='absolute z-20 cursor-pointer bg-red-500 text-center'
+                  className='absolute z-20 cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
                   style={{
-                    right: '12px',
-                    top: 'calc(100vh - 62px)',
+                    right: '18px',
+                    top: 'calc(100vh - 68px)',
                     width: '50px',
-                    height: '50px'
+                    height: '50px',
+                    transition: 'transform 0.65s',
+                    transform
                   }}
                 >
-                  <h1>Toggle</h1>
+                  <h1>{'->'}</h1>
                 </div>
 
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />

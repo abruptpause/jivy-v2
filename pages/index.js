@@ -1,4 +1,3 @@
-// https://jivy-v2.vercel.app/
 import { useState } from 'react'
 import { createClient } from "../prismicio"
 import { Featured, Hero, Section, Text, Work } from '../components/components.js'
@@ -15,53 +14,38 @@ const Home = ({ page }) => {
 
   // col-span-2 or col-span-3 when expanded
   const [width, setWidth] = useState('w-2/3')
-
   // z-1 or z-10 when expanded
   const [index, setIndex] = useState('z-1')
-
-
   const [transform, setTransform] = useState('initial')
-
-
 
   return (
     <main>
-
-
-
       <div className='relative grid grid-cols-3'>
-
         <Featured page={page} />
-
-        {/*
-            TODO wrap all hero components in a percentage width (75-100%/w-screen), and change inner classes to w-full
-            can also use fraction widths: https://tailwindcss.com/docs/width
-          */}
 
         <div className={`relative col-span-3 z-10 ${width}`}
           style={{
             transition: 'width 0.65s'
           }}
         >
-
-                <div
-                  onClick={() => {
-                    index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
-                    width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
-                    transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
-                  }}
-                  className='absolute z-20 cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
-                  style={{
-                    right: '18px',
-                    top: 'calc(100vh - 68px)',
-                    width: '50px',
-                    height: '50px',
-                    transition: 'transform 0.65s',
-                    transform
-                  }}
-                >
-                  <h1>{'->'}</h1>
-                </div>
+          <div
+            onClick={() => {
+              index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
+              width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
+              transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
+            }}
+            className='absolute z-20 cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
+            style={{
+              right: '18px',
+              top: 'calc(100vh - 68px)',
+              width: '50px',
+              height: '50px',
+              transition: 'transform 0.65s',
+              transform
+            }}
+          >
+            <h1>{'->'}</h1>
+          </div>
 
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
           <div className={`${index} h-screen bg-slate-200`} />
@@ -77,9 +61,7 @@ const Home = ({ page }) => {
               ))}
             </div>
           </div>
-
         </div>
-
       </div>
 
       <Section>

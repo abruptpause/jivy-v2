@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export const Section = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-start-2' }) => (
-  <div className={`min-h-screen grid grid-cols-12 ${bg}`}>
+  <div className={`min-h-screen grid grid-cols-12 overflow-x-hidden ${bg}`}>
     <div className={`${width} grid grid-cols-12 gap-y-14 m-14`}>{children}</div>
   </div>
 )
@@ -72,7 +72,7 @@ export const Hero = ({page, width, index}) => (
       freight-neo text-center text-white
       flex justify-center items-center
     `}>
-      <div>
+      <div className='overflow-x-hidden'>
         <h1 className='text-xl pb-12'>{page.data.subtitle[0].text}</h1>
         {page.data.title.map((i, k) => <h1 key={k} className='text-9xl'>{i.text}</h1>)}
       </div>

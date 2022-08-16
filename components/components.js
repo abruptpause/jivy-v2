@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 
 export const Section = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-start-2' }) => (
@@ -18,19 +19,42 @@ export const Text = ({ item, className, primary = 'text-slate-400', secondary = 
   </div>
 )
 
-export const Work = ({ src, className }) => (
-  <div className={`relative ${className} mx-7`}>
-    <Image src={src} alt='' layout='fill' />
-  </div>
-)
+export const Work = ({ src, className }) => {
+  const [opacity, setOpacity] = useState('0')
 
-const Square = ({ src, start }) => (
-  <div className={`
-    relative aspect-[1/1] my-8 scroll-element col-span-7 ${start}
-  `}>
-    <Image layout='fill' alt='' src={src} />
-  </div>
-)
+  return (
+    <div
+      className={`relative ${className} mx-7`}
+      style={{
+        transition: 'opacity 0.75s',
+        opacity
+      }}
+    >
+      <Image src={src} alt='' layout='fill' onLoadingComplete={() => {
+        setOpacity('1')
+      }} />
+    </div>
+  )
+}
+
+const Square = ({ src, start }) => {
+  const [opacity, setOpacity] = useState('0')
+
+  return (
+    <div className={`
+      relative aspect-[1/1] my-8 scroll-element col-span-7 ${start}
+    `}
+    style={{
+      transition: 'opacity 0.75s',
+      opacity
+    }}
+    >
+      <Image src={src} alt='' layout='fill' onLoadingComplete={() => {
+          setOpacity('1')
+      }} />
+    </div>
+  )
+}
 
 export const Featured = ({page}) => {
   const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]

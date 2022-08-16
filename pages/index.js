@@ -12,9 +12,7 @@ const Home = ({ page }) => {
 
   const heroImage = { backgroundImage: `url('${image.url}')` }
 
-  // col-span-2 or col-span-3 when expanded
   const [width, setWidth] = useState('w-2/3')
-  // z-1 or z-10 when expanded
   const [index, setIndex] = useState('z-1')
   const [transform, setTransform] = useState('initial')
 

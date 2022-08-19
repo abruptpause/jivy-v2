@@ -101,7 +101,7 @@ export const Hero = ({page, width, index}) => (
     `}>
       <div className='overflow-x-hidden'>
         <h1 className='text-xl pb-12'>{page.data.subtitle[0].text}</h1>
-        {page.data.title.map((i, k) => <h1 key={k} className='text-5xl md:text-7xl lg:text-9xl'>{i.text}</h1>)}
+        {page.data.title.map((i, k) => <h1 key={k} className='text-5xl md:text-7xl lg:text-9xl 2xl:text-[10rem]'>{i.text}</h1>)}
       </div>
     </div>
   </div>

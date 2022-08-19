@@ -21,15 +21,19 @@ const Home = ({ page }) => {
     <main>
 
       {/* the hero section (a mess) */}
-
       <div className='relative grid grid-cols-3'>
+
+        {/* right container */}
         <Featured page={page} />
 
+        {/* left container */}
         <div className={`relative col-span-3 z-10 ${width}`}
           style={{
             transition: 'width 0.65s'
           }}
         >
+
+          {/* toggle button */}
           <div
             onClick={() => {
               index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
@@ -49,25 +53,33 @@ const Home = ({ page }) => {
             <h1>{'->'}</h1>
           </div>
 
+          {/* the hero image */}
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
+
+          {/* background div behind 'featuring art by john ivy */}
           <div className={`${index} h-screen bg-slate-200`} />
 
+          {/* "featuring art by john ivy" */}
           <Hero page={page} width='col-span-3' index={index} />
 
+          {/* paragraph under hero */}
           <div className={`${index} grid grid-cols-5 col-span-2 bg-slate-200 text-justify`}>
             <div className='col-span-3 col-start-2 mb-24'>
               {about.map((i, k) => (
-                <p key={k} className='text-xl text-slate-500 font-extralight mb-4'>
+                <p key={k} className='text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-slate-500 font-extralight mb-4'>
                   {i.text}
                 </p>
               ))}
             </div>
           </div>
+
         </div>
+        {/* end left container */}
+
       </div>
+      {/* end hero section */}
 
       {/* all the rows */}
-
       <Row>
         <Art src={art[0].image} className='lg:col-span-8 aspect-[5/7] self-start' />
         <Description src={art[0]} className='lg:col-span-4 self-end' />

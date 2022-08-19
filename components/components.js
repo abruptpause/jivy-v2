@@ -3,17 +3,17 @@ import Image from 'next/image'
 
 export const Row = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-start-2' }) => (
   <div className={`min-h-screen grid grid-cols-12 overflow-x-hidden ${bg}`}>
-    <div className={`${width} grid grid-cols-12 gap-y-14 m-14`}>{children}</div>
+    <div className={`${width} grid grid-cols-12 gap-y-14 m-7 md:m-14`}>{children}</div>
   </div>
 )
 
 export const Description = ({ src, className, primary = 'text-slate-400', secondary = 'text-slate-500' }) => (
-  <div className={`relative ${className} mx-7 col-span-12 col-start-1`}>
-    <h1 className={`freight-neo font-normal text-3xl mb-4 ${primary}`}>
+  <div className={`relative ${className} md:mx-7 col-span-12 col-start-1`}>
+    <h1 className={`freight-neo font-normal text-3xl xl:text-4xl mb-4 ${primary}`}>
       {src.name}
     </h1>
-    <h2 className={`freight-neo ${secondary}`}>{src.medium}</h2>
-    <h2 className={`freight-neo mb-12 ${secondary}`}>
+    <h2 className={`freight-neo xl:text-lg ${secondary}`}>{src.medium}</h2>
+    <h2 className={`freight-neo xl:text-lg mb-12 ${secondary}`}>
       {src.size}
     </h2>
   </div>
@@ -24,7 +24,7 @@ export const Art = ({ src, className }) => {
 
   return (
     <div
-      className={`relative ${className} mx-7 col-span-12 col-start-1`}
+      className={`relative ${className} md:mx-7 col-span-12 col-start-1`}
       style={{
         transition: 'opacity 0.75s',
         opacity
@@ -101,7 +101,7 @@ export const Hero = ({page, width, index}) => (
     `}>
       <div className='overflow-x-hidden'>
         <h1 className='text-xl pb-12'>{page.data.subtitle[0].text}</h1>
-        {page.data.title.map((i, k) => <h1 key={k} className='text-9xl'>{i.text}</h1>)}
+        {page.data.title.map((i, k) => <h1 key={k} className='text-5xl md:text-7xl lg:text-9xl'>{i.text}</h1>)}
       </div>
     </div>
   </div>

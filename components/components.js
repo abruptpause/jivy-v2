@@ -1,25 +1,25 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-export const Section = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-start-2' }) => (
+export const Row = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-start-2' }) => (
   <div className={`min-h-screen grid grid-cols-12 overflow-x-hidden ${bg}`}>
     <div className={`${width} grid grid-cols-12 gap-y-14 m-14`}>{children}</div>
   </div>
 )
 
-export const Text = ({ item, className, primary = 'text-slate-400', secondary = 'text-slate-500' }) => (
+export const Description = ({ src, className, primary = 'text-slate-400', secondary = 'text-slate-500' }) => (
   <div className={`relative ${className} mx-7`}>
     <h1 className={`freight-neo font-normal text-3xl mb-4 ${primary}`}>
-      {item.name}
+      {src.name}
     </h1>
-    <h2 className={`freight-neo ${secondary}`}>{item.medium}</h2>
+    <h2 className={`freight-neo ${secondary}`}>{src.medium}</h2>
     <h2 className={`freight-neo mb-12 ${secondary}`}>
-      {item.size}
+      {src.size}
     </h2>
   </div>
 )
 
-export const Work = ({ src, className }) => {
+export const Art = ({ src, className }) => {
   const [opacity, setOpacity] = useState('0')
 
   return (
@@ -37,6 +37,7 @@ export const Work = ({ src, className }) => {
   )
 }
 
+// a square work (featured section)
 const Square = ({ src, start }) => {
   const [opacity, setOpacity] = useState('0')
 
@@ -56,13 +57,13 @@ const Square = ({ src, start }) => {
   )
 }
 
+// featured section
 export const Featured = ({page}) => {
   const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
 
   return (
     <div
       className='grid grid-cols-3 absolute top-0 left-0 w-full h-full z-10'
-      // style={{transform: 'translateX(10%)'}}
     >
       <div className={`
         grid grid-cols-12
@@ -83,6 +84,8 @@ export const Featured = ({page}) => {
   )
 }
 
+// hero splash/text
+// TODO probably add a loader here for text
 export const Hero = ({page, width, index}) => (
   <div
     className={`grid grid-cols-3 w-full absolute top-0 left-0 ${index}`}

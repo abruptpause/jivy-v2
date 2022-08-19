@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createClient } from "../prismicio"
-import { Featured, Hero, Section, Text, Work } from '../components/components.js'
+import { Featured, Hero, Row, Description, Art } from '../components/components.js'
 
 const Home = ({ page }) => {
   const { about, image, slices } = page.data
@@ -10,6 +10,7 @@ const Home = ({ page }) => {
   .sort((a, b) => a.position - b.position)
   .map(i => { return { ...i, image: i.image.url } })
 
+  // TODO replace with <Image /> ?
   const heroImage = { backgroundImage: `url('${image.url}')` }
 
   const [width, setWidth] = useState('w-2/3')
@@ -18,6 +19,9 @@ const Home = ({ page }) => {
 
   return (
     <main>
+
+      {/* the hero section (a mess) */}
+
       <div className='relative grid grid-cols-3'>
         <Featured page={page} />
 
@@ -62,29 +66,31 @@ const Home = ({ page }) => {
         </div>
       </div>
 
-      <Section>
-        <Work src={art[0].image} className='col-span-8 aspect-[5/7] self-start' />
-        <Text item={art[0]} className='col-span-4 self-end' />
-        <Text item={art[1]} className='col-span-8 self-end text-right' />
-        <Work src={art[1].image} className='col-span-4 aspect-[4/5] self-end mb-24' />
-      </Section>
+      {/* all the rows */}
 
-      <Section bg='bg-slate-200'>
-        <Work src={art[2].image} className='col-span-6 aspect-[2/3] self-start' />
-        <Text item={art[2]} className='col-span-6 self-end' />
-      </Section>
+      <Row>
+        <Art src={art[0].image} className='col-span-8 aspect-[5/7] self-start' />
+        <Description src={art[0]} className='col-span-4 self-end' />
+        <Description src={art[1]} className='col-span-8 self-end text-right' />
+        <Art src={art[1].image} className='col-span-4 aspect-[4/5] self-end mb-24' />
+      </Row>
 
-      <Section bg='bg-slate-400'>
-        <Work src={art[3].image} className='col-span-10 col-start-2 aspect-[7/5] bg-slate-500 self-center' />
-        <Text item={art[3]} className='col-span-10 col-start-2 text-center' primary='text-slate-600' secondary='text-slate-700' />
-      </Section>
+      <Row bg='bg-slate-200'>
+        <Art src={art[2].image} className='col-span-6 aspect-[2/3] self-start' />
+        <Description src={art[2]} className='col-span-6 self-end' />
+      </Row>
 
-      <Section>
-        <Work src={art[4].image} className='col-span-6 aspect-[4/5] self-start' />
-        <Text item={art[4]} className='col-span-5 self-end' />
-        <Text item={art[5]} className='col-span-6 self-end text-right' />
-        <Work src={art[5].image} className='col-span-5 aspect-[1/1] self-end' />
-      </Section>
+      <Row bg='bg-slate-400'>
+        <Art src={art[3].image} className='col-span-10 col-start-2 aspect-[7/5] bg-slate-500 self-center' />
+        <Description src={art[3]} className='col-span-10 col-start-2 text-center' primary='text-slate-600' secondary='text-slate-700' />
+      </Row>
+
+      <Row>
+        <Art src={art[4].image} className='col-span-6 aspect-[4/5] self-start' />
+        <Description src={art[4]} className='col-span-5 self-end' />
+        <Description src={art[5]} className='col-span-6 self-end text-right' />
+        <Art src={art[5].image} className='col-span-5 aspect-[1/1] self-end' />
+      </Row>
     </main>
   )
 }

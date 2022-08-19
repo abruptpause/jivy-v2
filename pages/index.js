@@ -69,27 +69,27 @@ const Home = ({ page }) => {
       {/* all the rows */}
 
       <Row>
-        <Art src={art[0].image} className='col-span-8 aspect-[5/7] self-start' />
-        <Description src={art[0]} className='col-span-4 self-end' />
-        <Description src={art[1]} className='col-span-8 self-end text-right' />
-        <Art src={art[1].image} className='col-span-4 aspect-[4/5] self-end mb-24' />
+        <Art src={art[0].image} className='lg:col-span-8 aspect-[5/7] self-start' />
+        <Description src={art[0]} className='lg:col-span-4 self-end' />
+        <Description src={art[1]} className='lg:col-span-8 self-end text-right' />
+        <Art src={art[1].image} className='lg:col-span-4 aspect-[4/5] self-end mb-24' />
       </Row>
 
       <Row bg='bg-slate-200'>
-        <Art src={art[2].image} className='col-span-6 aspect-[2/3] self-start' />
-        <Description src={art[2]} className='col-span-6 self-end' />
+        <Art src={art[2].image} className='lg:col-span-6 aspect-[2/3] self-start' />
+        <Description src={art[2]} className='lg:col-span-6 self-end' />
       </Row>
 
       <Row bg='bg-slate-400'>
-        <Art src={art[3].image} className='col-span-10 col-start-2 aspect-[7/5] bg-slate-500 self-center' />
-        <Description src={art[3]} className='col-span-10 col-start-2 text-center' primary='text-slate-600' secondary='text-slate-700' />
+        <Art src={art[3].image} className='lg:col-span-10 lg:col-start-2 aspect-[7/5] bg-slate-500 self-center' />
+        <Description src={art[3]} className='lg:col-span-10 lg:col-start-2 text-center' primary='text-slate-600' secondary='text-slate-700' />
       </Row>
 
       <Row>
-        <Art src={art[4].image} className='col-span-6 aspect-[4/5] self-start' />
-        <Description src={art[4]} className='col-span-5 self-end' />
-        <Description src={art[5]} className='col-span-6 self-end text-right' />
-        <Art src={art[5].image} className='col-span-5 aspect-[1/1] self-end' />
+        <Art src={art[4].image} className='lg:col-span-6 aspect-[4/5] self-start' />
+        <Description src={art[4]} className='lg:col-span-5 self-end' />
+        <Description src={art[5]} className='lg:col-span-6 self-end text-right' />
+        <Art src={art[5].image} className='lg:col-span-5 aspect-[1/1] self-end' />
       </Row>
     </main>
   )

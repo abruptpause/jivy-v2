@@ -8,7 +8,7 @@ export const Row = ({ children, bg = 'bg-slate-100', width = 'col-span-10 col-st
 )
 
 export const Description = ({ src, className, primary = 'text-slate-400', secondary = 'text-slate-500' }) => (
-  <div className={`relative ${className} mx-7`}>
+  <div className={`relative ${className} mx-7 col-span-12 col-start-1`}>
     <h1 className={`freight-neo font-normal text-3xl mb-4 ${primary}`}>
       {src.name}
     </h1>
@@ -24,7 +24,7 @@ export const Art = ({ src, className }) => {
 
   return (
     <div
-      className={`relative ${className} mx-7`}
+      className={`relative ${className} mx-7 col-span-12 col-start-1`}
       style={{
         transition: 'opacity 0.75s',
         opacity

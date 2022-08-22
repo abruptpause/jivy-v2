@@ -13,7 +13,7 @@ export const Description = ({ src, className, primary = 'text-slate-400', second
       {src.name}
     </h1>
     <h2 className={`freight-neo xl:text-lg ${secondary}`}>{src.medium}</h2>
-    <h2 className={`freight-neo xl:text-lg mb-12 ${secondary}`}>
+    <h2 className={`freight-neo xl:text-lg md:mb-12 ${secondary}`}>
       {src.size}
     </h2>
   </div>

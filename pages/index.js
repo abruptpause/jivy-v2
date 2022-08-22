@@ -13,6 +13,7 @@ const Home = ({ page }) => {
   // TODO replace with <Image /> ?
   const heroImage = { backgroundImage: `url('${image.url}')` }
 
+  // these are all for the hero section.
   const [width, setWidth] = useState('w-2/3')
   const [index, setIndex] = useState('z-1')
   const [transform, setTransform] = useState('initial')
@@ -27,11 +28,13 @@ const Home = ({ page }) => {
         <Featured page={page} />
 
         {/* left container */}
-        <div className={`relative col-span-3 z-10 ${width}`}
-          style={{
-            transition: 'width 0.65s'
-          }}
+        <div
+          className={`relative col-span-3 z-10 ${width}`}
+          style={{transition: 'width 0.65s'}}
         >
+
+
+          <div className='absolute z-20 h-full right-6 bottom-6'>
 
           {/* toggle button */}
           <div
@@ -40,18 +43,21 @@ const Home = ({ page }) => {
               width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
               transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
             }}
-            className='absolute z-20 cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
+            className='sticky cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
             style={{
-              right: '18px',
               top: 'calc(100vh - 68px)',
               width: '50px',
               height: '50px',
               transition: 'transform 0.65s',
               transform
             }}
-          >
+            >
             <h1>{'->'}</h1>
           </div>
+
+          </div>
+
+
 
           {/* the hero image */}
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />

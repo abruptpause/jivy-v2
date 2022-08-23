@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { createClient } from "../prismicio"
+import { createClient } from '../prismicio'
 import { Featured, Hero, Row, Description, Art } from '../components/components.js'
 
 const Home = ({ page }) => {
   const { about, image, slices } = page.data
 
   const art = slices
-  .filter(slice => slice.slice_type === 'artworks')[0].items
-  .sort((a, b) => a.position - b.position)
-  .map(i => { return { ...i, image: i.image.url } })
+    .filter(slice => slice.slice_type === 'artworks')[0].items
+    .sort((a, b) => a.position - b.position)
+    .map(i => { return { ...i, image: i.image.url } })
 
   // TODO replace with <Image /> ?
   const heroImage = { backgroundImage: `url('${image.url}')` }
@@ -21,43 +21,41 @@ const Home = ({ page }) => {
   return (
     <main>
 
-      {/* the hero section (a mess) */}
+      {/* the entire top section (a mess) */}
       <div className='relative grid grid-cols-3'>
 
-        {/* right container */}
+        {/* featured container */}
         <Featured page={page} />
 
-        {/* left container */}
+        {/* hero container */}
         <div
           className={`relative col-span-3 z-10 ${width}`}
-          style={{transition: 'width 0.65s'}}
+          style={{ transition: 'width 0.65s' }}
         >
 
-
+          {/* toggle button container */}
           <div className='absolute z-20 h-full right-6 bottom-6'>
 
-          {/* toggle button */}
-          <div
-            onClick={() => {
-              index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
-              width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
-              transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
-            }}
-            className='sticky cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
-            style={{
-              top: 'calc(100vh - 68px)',
-              width: '50px',
-              height: '50px',
-              transition: 'transform 0.65s',
-              transform
-            }}
-            >
-            <h1>{'->'}</h1>
-          </div>
+            {/* toggle button */}
+            <div
+              onClick={() => {
+                index === 'z-1' ? setIndex('z-10') : setIndex('z-1')
+                width === 'w-2/3' ? setWidth('w-full') : setWidth('w-2/3')
+                transform === 'scaleX(-100%)' ? setTransform('initial') : setTransform('scaleX(-100%)')
+              }}
+              className='sticky cursor-pointer bg-white text-slate-600 flex justify-center items-center font-bold'
+              style={{
+                top: 'calc(100vh - 68px)',
+                width: '50px',
+                height: '50px',
+                transition: 'transform 0.65s',
+                transform
+              }}
+              >
+              <h1>{'->'}</h1>
+            </div>
 
           </div>
-
-
 
           {/* the hero image */}
           <div className={`${index} h-screen bg-center bg-cover text-slate-200`} style={heroImage} />
@@ -113,9 +111,9 @@ const Home = ({ page }) => {
   )
 }
 
-export async function getServerSideProps({ locale, previewData }) {
+export async function getServerSideProps ({ locale, previewData }) {
   const client = createClient({ previewData })
-  const page = await client.getByUID("home", "home", { lang: locale })
+  const page = await client.getByUID('home', 'home', { lang: locale })
 
   return {
     props: {

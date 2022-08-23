@@ -1,13 +1,13 @@
-const prismic = require("@prismicio/client");
+const prismic = require('@prismicio/client')
 
-const sm = require("./sm.json");
+const sm = require('./sm.json')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = async () => {
-  const client = prismic.createClient(sm.apiEndpoint);
+  const client = prismic.createClient(sm.apiEndpoint)
 
-  const repository = await client.getRepository();
-  const locales = repository.languages.map((lang) => lang.id);
+  const repository = await client.getRepository()
+  const locales = repository.languages.map((lang) => lang.id)
 
   return {
     reactStrictMode: true,
@@ -17,14 +17,14 @@ const nextConfig = async () => {
       locales,
       // This is the default locale you want to be used when visiting
       // a non-locale prefixed path e.g. `/hello`
-      defaultLocale: locales[0],
+      defaultLocale: locales[0]
     },
     images: {
-      loader: "imgix",
-      path: "",
-      domains: ["images.prismic.io"],
-    },
-  };
-};
+      loader: 'imgix',
+      path: '',
+      domains: ['images.prismic.io']
+    }
+  }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

@@ -51,14 +51,14 @@ const Square = ({ src, start }) => {
     }}
     >
       <Image src={src} alt='' layout='fill' onLoadingComplete={() => {
-          setOpacity('1')
+        setOpacity('1')
       }} />
     </div>
   )
 }
 
 // featured section
-export const Featured = ({page}) => {
+export const Featured = ({ page }) => {
   const featured = page.data.slices.filter(slice => slice.slice_type === 'featured')[0]
 
   return (
@@ -86,7 +86,7 @@ export const Featured = ({page}) => {
 
 // hero splash/text
 // TODO probably add a loader here for text
-export const Hero = ({page, width, index}) => (
+export const Hero = ({ page, width, index }) => (
   <div
     className={`grid grid-cols-3 w-full absolute top-0 left-0 ${index}`}
     style={{

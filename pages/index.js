@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createClient } from '../prismicio'
 import { Featured, Hero, Row, Description, Art } from '../components/components.js'
+import Head from 'next/head'
 
 const Home = ({ page }) => {
   const { about, image, slices } = page.data
@@ -19,6 +20,10 @@ const Home = ({ page }) => {
   const [transform, setTransform] = useState('initial')
 
   return (
+    <>
+    <Head>
+      <title>Abrupt Pause</title>
+    </Head>
     <main>
 
       {/* the entire top section (a mess) */}
@@ -108,6 +113,7 @@ const Home = ({ page }) => {
         <Art src={art[5].image} className='lg:col-span-5 aspect-[1/1] self-end' />
       </Row>
     </main>
+    </>
   )
 }
 
